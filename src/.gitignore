@@ -1,0 +1,15 @@
+# Laravelの依存ファイル・ビルドファイル
+/src/vendor/
+/src/node_modules/
+
+# Laravelの環境設定（個別で管理する）
+/src/.env
+
+# Laravelのログ・キャッシュ・セッション等
+/src/storage/
+!/src/storage/app/public
+/src/bootstrap/cache/
+
+# テストレポートなど
+/src/coverage-html/
+/src/phpunit.xml.cache

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-app
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "9000:9000" # PHP-FPM
+    environment:
+      XDEBUG_MODE: coverage
+      XDEBUG_CONFIG: "client_host=host.docker.internal"
+
+  web:
+    image: nginx:alpine
+    container_name: laravel-web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: laravel-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"

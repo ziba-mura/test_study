@@ -1,0 +1,13 @@
+# IDE/エディタ関連
+.vscode/
+.idea/
+
+# OSやエディタの一時ファイル
+.DS_Store
+Thumbs.db
+
+# Dockerで自動生成されるファイル
+*.log
+*.pid
+
+/src/vendor/
