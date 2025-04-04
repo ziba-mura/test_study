@@ -34,10 +34,10 @@
         <div>
             <label>学年：</label>
             <select name="grade">
-                <option value="1">1年</option>
-                <option value="2">2年</option>
-                <option value="3">3年</option>
-            </select>
+            @foreach (\domain\Entity\Student\Enum\Grade::cases() as $grade)
+                    <option value="{{ $grade->value }}">{{ $grade->label() }}</option>
+                @endforeach
+            </select>            
         </div>
         <button type="submit">登録</button>
     </form>

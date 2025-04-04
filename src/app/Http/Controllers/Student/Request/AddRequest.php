@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Student\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
+use domain\Entity\Student\Enum\Grade;
 
 class AddRequest extends FormRequest
 {
@@ -24,7 +26,22 @@ class AddRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'hobby' => ['nullable', 'string'],
-            'grade' => ['required', 'in:1,2,3'],
+            'grade' => ['required',  new Enum(Grade::class)],
         ];
+    }
+
+    public function getName(): string
+    {
+        return $this->string('name');
+    }
+
+    public function getHobby(): string
+    {
+        return $this->string('hobby');
+    }
+
+    public function getGrade(): Grade
+    {
+        return Grade::from($this->integer('grade'));
     }
 }
