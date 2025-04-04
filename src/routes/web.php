@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\Student\AddViewController;
+use App\Http\Controllers\Student\AddController;
+
+Route::get('/student/add', AddViewController::class);
+Route::post('/student/add', AddController::class);
