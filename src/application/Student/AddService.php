@@ -3,6 +3,7 @@
 namespace Application\Student;
 
 use Domain\Student\Student;
+use Domain\Student\Repository\StudentRepositoryInterface;
 use Application\Student\StudentFactory;
 
 // 新規生徒登録サービス
@@ -10,22 +11,17 @@ class AddService
 {
     public function __construct(
         private StudentFactory $factory,
+        private StudentRepositoryInterface $repository,
     ) {}
 
     public function execute(StudentInputData $input): Student
     {
-        $name = $input->name;
-        $hobby = $input->hobby;
-        $grade = $input->grade;
-
         $student = $this->factory->forNew(
-            name: $name,
-            hobby: $hobby,
-            grade: $grade
+            name: $input->name,
+            hobby: $input->hobby,
+            grade: $input->grade
         );
 
-        // 永続化処理
-
-        return $student;
+        return $this->repository->add($student);
     }
 }
