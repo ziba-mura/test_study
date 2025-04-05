@@ -19,6 +19,6 @@ class AddController extends Controller
         );
 
         $addService->execute($input);
-        return redirect('/student/add')->with('success', '登録成功！');
+        return redirect()->route(AddController::class)->with('success', '登録成功！');
     }
 }
