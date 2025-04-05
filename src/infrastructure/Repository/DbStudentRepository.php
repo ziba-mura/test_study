@@ -15,7 +15,8 @@ class DbStudentRepository implements StudentRepositoryInterface
 {
     public function add(Student $student): Student
     {
-        $id = DB::table('students')->insertGetId([
+        DB::table('students')->insert([
+            'id'          => $student->getId(),
             'name'        => $student->getName(),
             'hobby'       => $student->getHobby(),
             'grade'       => $student->getGrade()->value,
@@ -24,7 +25,7 @@ class DbStudentRepository implements StudentRepositoryInterface
             'updated_at'  => $student->getUpdatedAt(),
         ]);
 
-        return $student->withId($id);
+        return $student;
     }
 
     public function findAll(): Collection

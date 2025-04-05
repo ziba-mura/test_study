@@ -7,6 +7,7 @@ use Domain\Student\ValueObject\Name;
 use Domain\Student\ValueObject\Hobby;
 use Domain\Student\Enum\Grade;
 use Carbon\CarbonImmutable;
+use Illuminate\Support\Str;
 
 // Studentエンティティ作成クラス
 class StudentFactory
@@ -15,7 +16,7 @@ class StudentFactory
     public function forNew(string $name, ?string $hobby, Grade $grade): Student
     {
         return new Student(
-            id: null,
+            id: (string) Str::ulid(),
             name: new Name($name),
             hobby: new Hobby($hobby),
             grade: $grade,

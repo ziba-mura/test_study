@@ -10,7 +10,7 @@ use Domain\Student\Enum\Grade;
 class Student
 {
     public function __construct(
-        private ?int $id,
+        private string $id,
         private Name $name,
         private Hobby $hobby,
         private Grade $grade,
@@ -19,20 +19,7 @@ class Student
         private CarbonImmutable $updatedAt,
     ) {}
 
-    public function withId(int $id): self
-    {
-        return new self(
-            id: $id,
-            name: $this->name,
-            hobby: $this->hobby,
-            grade: $this->grade,
-            isDeleted: $this->isDeleted,
-            createdAt: $this->createdAt,
-            updatedAt: $this->updatedAt
-        );
-    }
-
-    public function getId(): ?int
+    public function getId(): string
     {
         return $this->id;
     }

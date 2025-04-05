@@ -9,13 +9,13 @@
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th><th>氏名</th><th>趣味</th><th>学年</th><th>登録日時</th>
+                <th>NO.</th><th>氏名</th><th>趣味</th><th>学年</th><th>登録日時</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($students as $student)
                 <tr>
-                    <td>{{ $student->getId() }}</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $student->getName() }}</td>
                     <td>{{ $student->getHobby() }}</td>
                     <td>{{ $student->getGrade()->label() }}</td>
