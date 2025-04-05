@@ -35,3 +35,7 @@ services:
       MYSQL_PASSWORD: secret
     ports:
       - "3306:3306"
+  adminer:
+    image: adminer
+    ports:
+      - 8081:8080
