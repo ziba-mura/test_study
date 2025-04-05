@@ -15,14 +15,15 @@ class StudentFactory
     // 登録画面からの新規レコード作成用
     public function forNew(string $name, ?string $hobby, Grade $grade): Student
     {
+        $now = CarbonImmutable::now();
         return new Student(
             id: (string) Str::ulid(),
             name: new Name($name),
             hobby: new Hobby($hobby),
             grade: $grade,
             isDeleted: false,
-            createdAt: CarbonImmutable::now(),
-            updatedAt: CarbonImmutable::now(),
+            createdAt: $now,
+            updatedAt: $now,
         );
     }
 }
