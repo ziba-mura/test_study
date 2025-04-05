@@ -12,3 +12,4 @@ Thumbs.db
 
 /src/vendor/
 /src/.env
+/src/.phpunit.result.cache
