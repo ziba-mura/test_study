@@ -41,5 +41,8 @@
         </div>
         <button type="submit">登録</button>
     </form>
+    <a href="{{ route(\App\Http\Controllers\Student\ListController::class) }}">
+        一覧へ
+    </a>
 </body>
 </html>

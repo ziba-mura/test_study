@@ -24,5 +24,8 @@
             @endforeach
         </tbody>
     </table>
+    <a href="{{ route(\App\Http\Controllers\Student\AddViewController::class) }}">
+        生徒登録
+    </a>
 </body>
 </html>
