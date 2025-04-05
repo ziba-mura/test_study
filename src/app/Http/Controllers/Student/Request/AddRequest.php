@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Student\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
-use domain\Entity\Student\Enum\Grade;
+use domain\Student\Enum\Grade;
 
 // 生徒登録用リクエスト
 class AddRequest extends FormRequest

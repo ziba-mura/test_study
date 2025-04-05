@@ -2,7 +2,7 @@
 
 namespace Application\Student;
 
-use Domain\Entity\Student\Enum\Grade;
+use Domain\Student\Enum\Grade;
 
 // Studentエンティティデータ受け渡し用クラス
 class StudentInputData

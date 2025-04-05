@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Entity\Student\Enum;
+namespace domain\Student\Enum;
 
 enum Grade: int
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Entity\Student\ValueObject;
+namespace domain\Student\ValueObject;
 
 use InvalidArgumentException;
 

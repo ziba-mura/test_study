@@ -1,11 +1,11 @@
 <?php
 
-namespace Domain\Entity\Student;
+namespace Domain\Student;
 
 use Carbon\CarbonImmutable;
-use Domain\Entity\Student\ValueObject\Name;
-use Domain\Entity\Student\ValueObject\Hobby;
-use Domain\Entity\Student\Enum\Grade;
+use Domain\Student\ValueObject\Name;
+use Domain\Student\ValueObject\Hobby;
+use Domain\Student\Enum\Grade;
 
 class Student
 {

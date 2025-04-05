@@ -34,7 +34,7 @@
         <div>
             <label>学年：</label>
             <select name="grade">
-            @foreach (\domain\Entity\Student\Enum\Grade::cases() as $grade)
+            @foreach (\domain\Student\Enum\Grade::cases() as $grade)
                     <option value="{{ $grade->value }}">{{ $grade->label() }}</option>
                 @endforeach
             </select>            

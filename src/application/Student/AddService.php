@@ -2,7 +2,7 @@
 
 namespace Application\Student;
 
-use Domain\Entity\Student\Student;
+use Domain\Student\Student;
 use Application\Student\StudentFactory;
 
 // 新規生徒登録サービス

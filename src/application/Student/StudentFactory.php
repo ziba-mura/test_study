@@ -2,10 +2,10 @@
 
 namespace Application\Student;
 
-use Domain\Entity\Student\Student;
-use Domain\Entity\Student\ValueObject\Name;
-use Domain\Entity\Student\ValueObject\Hobby;
-use Domain\Entity\Student\Enum\Grade;
+use Domain\Student\Student;
+use Domain\Student\ValueObject\Name;
+use Domain\Student\ValueObject\Hobby;
+use Domain\Student\Enum\Grade;
 use Carbon\CarbonImmutable;
 
 // Studentエンティティ作成クラス
