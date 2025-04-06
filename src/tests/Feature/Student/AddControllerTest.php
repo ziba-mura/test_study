@@ -4,7 +4,6 @@ namespace Tests\Feature\Student;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Str;
 use Domain\Student\Enum\Grade;
 
 class AddControllerTest extends TestCase
