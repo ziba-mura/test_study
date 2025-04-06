@@ -32,7 +32,7 @@ class DbStudentRepository implements StudentRepositoryInterface
     {
         $rows = DB::table('students')
             ->where('is_deleted', false)
-            ->orderBy('id', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return $rows->map(function ($row) {
