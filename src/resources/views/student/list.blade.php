@@ -1,3 +1,8 @@
+<?php
+use Illuminate\Support\Collection;
+use Domain\Student\Student;
+/** @var Collection<int, Student> $students */
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +11,9 @@
 </head>
 <body>
     <h1>生徒一覧</h1>
+    @if($students->isEmpty())
+        <p>生徒が未登録です</p>
+    @else
     <table border="1">
         <thead>
             <tr>
@@ -24,6 +32,7 @@
             @endforeach
         </tbody>
     </table>
+    @endif
     <a href="{{ route(\App\Http\Controllers\Student\AddViewController::class) }}">
         生徒登録
     </a>
