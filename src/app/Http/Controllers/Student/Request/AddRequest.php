@@ -25,8 +25,8 @@ class AddRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'hobby' => ['nullable', 'string'],
+            'name' => ['required', 'string', 'max:10'],
+            'hobby' => ['nullable', 'string', 'max:100'],
             'grade' => ['required',  new Enum(Grade::class)],
         ];
     }
